@@ -11,8 +11,11 @@ public class read_file_test : MonoBehaviour
     float gt=0.5f;
     string before_deta;
 
-    //flag_change(受信した文字列,書き換える配列の番号（デフォルトで受信した文字列）,trueにするかfalseにするか（デフォルトでtrue）);
-    void flag_change(string num1,int num2 = int.Parse(num1)-1000, bool t_f = true){
+    //flag_change(受信した文字列,書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
+    void flag_change(string num1,int num2 = -1, bool t_f = true){
+        if(num2 == -1){
+            num2 = int.Parse(num1)-1000;
+        }
         Debug.Log("Successfully read" + num2);
         Bv.push_flag[num2] = t_f;
     }
@@ -29,11 +32,17 @@ public class read_file_test : MonoBehaviour
             //Debug.Log("Data is " + deta);
             if(before_deta!=deta){
                 //ここからフラグ管理
-                flag_change();
+                flag_change(deta);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
             dt=0;
         }
+    }
+}
+
+namespace Bluetooth_value{
+    public class Bv{
+        public static bool[] push_flag = new bool[5];
     }
 }
