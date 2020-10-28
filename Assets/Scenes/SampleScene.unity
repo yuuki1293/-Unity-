@@ -152,7 +152,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415666267}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 956109b52d3f5e747a550c24ca43ddd3, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 781638374d9b41d47b85efc790af66c4, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -258,7 +258,7 @@ RectTransform:
   m_GameObject: {fileID: 415666267}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 108, y: 226.84, z: 1}
+  m_LocalScale: {x: 1920, y: 1080, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -437,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -174.52}
+  m_LocalPosition: {x: 0, y: 0, z: -853.02}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -513,6 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566405087}
+  - component: {fileID: 1566405088}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -534,3 +535,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566405088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566405086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f397f6bb554d2d4ab53f1e61914bfc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
