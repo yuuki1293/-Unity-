@@ -10,7 +10,7 @@ public class start_teraterm : MonoBehaviour
     void Start()
     {
         ProcessStartInfo psInfo = new ProcessStartInfo() {
-            FileName = "C:\\Program Files (x86)\\teraterm\\ttermpro.exe",    // 実行するファイル 
+            FileName = "C:\\Program Files (x86)\\teraterm\\ttpmacro.exe",    // 実行するファイル 
             Arguments = "C:\\Users\\yuuki\\動画再生\\Assets\\tera_macro_unity.ttl",    // コマンドパラメータ（引数）
             CreateNoWindow = true,    // コンソール・ウィンドウを開かない
             UseShellExecute = false,  // シェル機能を使用しない
