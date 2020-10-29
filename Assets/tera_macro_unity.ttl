@@ -1,0 +1,40 @@
+;セミコロンの後はコメント
+;=================================================== 
+; Filename    : tera_macro_unity.ttl
+; Description : COM Port Auto login
+; Author      : yuuki1293
+; Created     : 2020/10/28
+; modified    : 
+;=================================================== 
+;; COMポート／ボー・レート設定 
+COM_PORT = '5' 
+BAUDRATE = '115200' 
+;=================================================== 
+;; ①コマンド組立て 
+COMMAND = '/C=' 
+strconcat COMMAND COM_PORT 
+strconcat COMMAND ' /BAUD=' 
+strconcat COMMAND BAUDRATE
+ 
+;; ②接続 
+connect COMMAND
+
+do
+    ;4523??が来るまで待つ
+    waitrecv "10" 4 1
+    ;500秒待つ
+    mpause 500  
+    ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
+    ;filewriteln ファイルハンドル　文字列：ファイルに書き込む
+    ;fileclose フィアルハンドル：ファイルを閉じる
+    fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
+    filewriteln FH inputstr
+    fileclose FH
+loop
+
+; do
+; fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
+; filewriteln FH '03'
+; fileclose FH
+; mpause 500
+; loop
