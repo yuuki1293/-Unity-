@@ -514,6 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566405087}
   - component: {fileID: 1566405088}
+  - component: {fileID: 1566405089}
   m_Layer: 0
   m_Name: flag
   m_TagString: Untagged
@@ -548,3 +549,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   local_flag: 0000000000000000000000
+--- !u!114 &1566405089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566405086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f48c3424c69604d8d6c553ab1f9b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
