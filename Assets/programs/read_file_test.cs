@@ -11,25 +11,27 @@ public class read_file_test : MonoBehaviour
     float gt=0.5f;
     string before_deta;
     public bool[] local_flag = new bool[11];
-    string deta = new string;
+    string deta = "";
 
     //フラグの名前を書く場所
     //-------------------------------------------------------
-    //0  工具1
-    //1  工具2
-    //2  工具3
-    //3  工具4
-    //4  工具5
+    const int box1 = 1;
+    const int box2 = 2;
+    const int box3 = 3;
+    const int box4 = 4;
+    const int box5 = 5;
     //-------------------------------------------------------
 
-    //flag_change(受信した文字列,書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
-    void flag_change(string num1,int num2 = -1, bool t_f = true){
-        if(deta == num1){
-            if(num2 == -1){
-                num2 = int.Parse(num1)-1000;
+    //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
+    void flag_change(string d = "-1", int num = -1, bool t_f = true){
+        if(num != -1 && d == deta){
+            if(int.Parse(deta)-1000 == num){
+                Debug.Log("Successfully read" + num);
+                Bv.push_flag[num] = t_f;
             }
-            Debug.Log("Successfully read" + num2);
-            Bv.push_flag[num2] = t_f;
+        }else{
+            Bv.push_flag[int.Parse(deta)-1000] = t_f;
+            Debug.Log("Successfully read" + deta);
         }
     }
 
@@ -48,7 +50,7 @@ public class read_file_test : MonoBehaviour
             //Debug.Log("Data is " + deta);
             if(before_deta!=deta){
                 //ここからフラグ管理
-                flag_change(deta);
+                flag_change();
                 //ここまでフラグ管理
                 before_deta = deta;
             }
