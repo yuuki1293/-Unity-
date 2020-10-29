@@ -54,6 +54,11 @@ public class read_file_test : MonoBehaviour
                 flag_change("1003", box3);
                 flag_change("1004", box4);
                 flag_change("1005", box5);
+                flag_change("1006", box1, false);
+                flag_change("1007", box2, false);
+                flag_change("1008", box3, false);
+                flag_change("1009", box4, false);
+                flag_change("1010", box5, false);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
