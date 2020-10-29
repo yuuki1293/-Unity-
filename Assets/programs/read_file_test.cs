@@ -10,7 +10,7 @@ public class read_file_test : MonoBehaviour
     float dt=0;
     float gt=0.5f;
     string before_deta;
-    public bool[] local_flag = new bool[11];
+    public bool[] local_flag = new bool[Bv.flag_num];
     string deta = "";
 
     //フラグの名前を書く場所
