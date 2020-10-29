@@ -25,11 +25,10 @@ public class read_file_test : MonoBehaviour
     //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
     void flag_change(string d = "-1", int num = -1, bool t_f = true){
         if(num != -1 && d == deta){
-            if(int.Parse(deta)-1000 == num){
                 Debug.Log("Successfully read" + num);
                 Bv.push_flag[num] = t_f;
-            }
-        }else{
+            
+        }else if(d == deta){
             Bv.push_flag[int.Parse(deta)-1000] = t_f;
             Debug.Log("Successfully read" + deta);
         }
@@ -50,7 +49,11 @@ public class read_file_test : MonoBehaviour
             //Debug.Log("Data is " + deta);
             if(before_deta!=deta){
                 //ここからフラグ管理
-                flag_change();
+                flag_change("1001", box1);
+                flag_change("1002", box2);
+                flag_change("1003", box3);
+                flag_change("1004", box4);
+                flag_change("1005", box5);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
