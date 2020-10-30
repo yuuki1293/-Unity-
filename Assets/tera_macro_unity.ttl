@@ -12,8 +12,8 @@ BAUDRATE = '9600'
 ;=================================================== 
 ;; ①コマンド組立て 
 COMMAND = '/C=' 
-strconcat COMMAND COM_PORT 
-strconcat COMMAND ' /BAUD=' 
+strconcat COMMAND COM_PORT
+strconcat COMMAND ' /BAUD='
 strconcat COMMAND BAUDRATE
  
 ;; ②接続 
@@ -23,7 +23,7 @@ do
     ;4523??が来るまで待つ
     waitrecv "10" 4 1
     ;500秒待つ
-    mpause 500  
+    mpause 500
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
     ;filewriteln ファイルハンドル　文字列：ファイルに書き込む
     ;fileclose フィアルハンドル：ファイルを閉じる
