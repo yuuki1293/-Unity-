@@ -11,7 +11,7 @@ COM_PORT = '8'
 BAUDRATE = '9600' 
 ;=================================================== 
 ;; ①コマンド組立て 
-COMMAND = '/C=' 
+COMMAND = '/I /C=' 
 strconcat COMMAND COM_PORT 
 strconcat COMMAND ' /BAUD=' 
 strconcat COMMAND BAUDRATE
