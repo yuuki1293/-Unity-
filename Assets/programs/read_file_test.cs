@@ -23,14 +23,10 @@ public class read_file_test : MonoBehaviour
     //-------------------------------------------------------
 
     //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
-    void flag_change(string d = "-1", int num = -1, bool t_f = true){
-        if(num != -1 && d == deta){
+    void flag_change(int d, int num, bool t_f = true){
+        if(d == int.Parse(deta)){
                 Debug.Log("Successfully read" + num);
                 Bv.push_flag[num] = t_f;
-            
-        }else if(d == deta){
-            Bv.push_flag[int.Parse(deta)-1000] = t_f;
-            Debug.Log("Successfully read" + deta);
         }
     }
 
@@ -41,24 +37,28 @@ public class read_file_test : MonoBehaviour
     void Update()
     {
         dt += Time.deltaTime;
-        for(int i = 0;i<Bv.flag_num;i++){
+        for(int i = 0;i<11;i++){
             local_flag[i] = Bv.push_flag[i];
         }
         if (dt>gt){
             deta = File.ReadAllText(path);
+            // Debug.Log("////"+deta);
+            // string buf = "1001";
             //Debug.Log("Data is " + deta);
             if(before_deta!=deta){
+                Debug.Log(deta);
                 //ここからフラグ管理
-                flag_change("1001", box1);
-                flag_change("1002", box2);
-                flag_change("1003", box3);
-                flag_change("1004", box4);
-                flag_change("1005", box5);
-                flag_change("1006", box1, false);
-                flag_change("1007", box2, false);
-                flag_change("1008", box3, false);
-                flag_change("1009", box4, false);
-                flag_change("1010", box5, false);
+                
+                flag_change(1001, box1);
+                flag_change(1002, box2);
+                flag_change(1003, box3);
+                flag_change(1004, box4);
+                flag_change(1005, box5);
+                flag_change(1006, box1, false);
+                flag_change(1007, box2, false);
+                flag_change(1008, box3, false);
+                flag_change(1009, box4, false);
+                flag_change(1010, box5, false);
                 //ここまでフラグ管理
                 before_deta = deta;
             }

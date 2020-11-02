@@ -7,13 +7,13 @@
 ; modified    : 
 ;=================================================== 
 ;; COMポート／ボー・レート設定 
-COM_PORT = '8'
-BAUDRATE = '9600' 
+COM_PORT = '4'
+BAUDRATE = '9600'
 ;=================================================== 
 ;; ①コマンド組立て 
 COMMAND = '/I /C=' 
 strconcat COMMAND COM_PORT 
-strconcat COMMAND ' /BAUD=' 
+strconcat COMMAND ' /BAUD='
 strconcat COMMAND BAUDRATE
  
 ;; ②接続 
@@ -31,10 +31,3 @@ do
     filewriteln FH inputstr
     fileclose FH
 loop
-
-; do
-; fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
-; filewriteln FH '03'
-; fileclose FH
-; mpause 500
-; loop
