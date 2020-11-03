@@ -19,12 +19,12 @@ strconcat COMMAND BAUDRATE
 ;; ②接続 
 connect COMMAND
 fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
-filewriteln FH '0'
+filewriteln FH "0"
 fileclose FH
 
 do
     ;4523??が来るまで待つ
-    waitregex '[1-6]'
+    waitregex "[123456]"
     ;500秒待つ
     mpause 500  
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く

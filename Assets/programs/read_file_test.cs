@@ -45,7 +45,6 @@ public class read_file_test : MonoBehaviour
             if(before_deta!=deta){
                 Debug.Log(deta);
                 //ここからフラグ管理
-                
                 flag_change(1, box1);
                 flag_change(2, box2);
                 flag_change(3, box3);

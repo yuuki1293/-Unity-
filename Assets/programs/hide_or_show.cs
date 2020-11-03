@@ -12,7 +12,7 @@ public class hide_or_show : MonoBehaviour
     void Update()
     {
         mr = GetComponent<SpriteRenderer>();
-        if(Bv.push_flag[num])mr.material.color = new Color32(0,0,0,0);
-        else mr.material.color = new Color32(0,0,0,255);
+        if(Bv.push_flag[num])mr.material.color = new Color32(0,0,0,255);
+        else mr.material.color = new Color32(0,0,0,0);
     }
 }

@@ -19,9 +19,9 @@ public class start_teraterm : MonoBehaviour
         //p.WaitForExit();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        exProcess.CloseMainWindow();
+        exProcess.Dispose();
     }
 }
