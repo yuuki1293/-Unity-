@@ -21,7 +21,7 @@ connect COMMAND
 
 do
     ;4523??が来るまで待つ
-    waitrecv "10" 4 1
+    waitregex '[1-6]'
     ;500秒待つ
     mpause 500  
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く

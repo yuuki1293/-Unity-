@@ -49,16 +49,12 @@ public class read_file_test : MonoBehaviour
                 Debug.Log(deta);
                 //ここからフラグ管理
                 
-                flag_change(1001, box1);
-                flag_change(1002, box2);
-                flag_change(1003, box3);
-                flag_change(1004, box4);
-                flag_change(1005, box5);
-                flag_change(1006, box1, false);
-                flag_change(1007, box2, false);
-                flag_change(1008, box3, false);
-                flag_change(1009, box4, false);
-                flag_change(1010, box5, false);
+                flag_change(1, box1);
+                flag_change(2, box2);
+                flag_change(3, box3);
+                flag_change(4, box4);
+                flag_change(5, box5);
+                flag_change(6, box1, false);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
