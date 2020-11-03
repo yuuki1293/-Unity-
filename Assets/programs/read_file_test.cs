@@ -15,11 +15,11 @@ public class read_file_test : MonoBehaviour
 
     //フラグの名前を書く場所
     //-------------------------------------------------------
-    const int box1 = 1;
-    const int box2 = 2;
-    const int box3 = 3;
-    const int box4 = 4;
-    const int box5 = 5;
+    const int box1 = 0;
+    const int box2 = 1;
+    const int box3 = 2;
+    const int box4 = 3;
+    const int box5 = 4;
     //-------------------------------------------------------
 
     //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
@@ -30,14 +30,11 @@ public class read_file_test : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start(){}
-
     // Update is called once per frame
     void Update()
     {
         dt += Time.deltaTime;
-        for(int i = 0;i<11;i++){
+        for(int i = 0;i<Bv.flag_num;i++){
             local_flag[i] = Bv.push_flag[i];
         }
         if (dt>gt){
@@ -48,17 +45,16 @@ public class read_file_test : MonoBehaviour
             if(before_deta!=deta){
                 Debug.Log(deta);
                 //ここからフラグ管理
-                
-                flag_change(1001, box1);
-                flag_change(1002, box2);
-                flag_change(1003, box3);
-                flag_change(1004, box4);
-                flag_change(1005, box5);
-                flag_change(1006, box1, false);
-                flag_change(1007, box2, false);
-                flag_change(1008, box3, false);
-                flag_change(1009, box4, false);
-                flag_change(1010, box5, false);
+                flag_change(1, box1);
+                flag_change(2, box2);
+                flag_change(3, box3);
+                flag_change(4, box4);
+                flag_change(5, box5);
+                flag_change(6, box1, false);
+                flag_change(6, box2, false);
+                flag_change(6, box3, false);
+                flag_change(6, box4, false);
+                flag_change(6, box5, false);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
@@ -70,7 +66,7 @@ public class read_file_test : MonoBehaviour
 namespace Bluetooth_value{
     public class Bv{
         //フラグ数
-        public static int flag_num = 11;
+        public static int flag_num = 5;
         public static bool[] push_flag = new bool[flag_num];
         
     }
