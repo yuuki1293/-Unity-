@@ -18,10 +18,4 @@ public class start_teraterm : MonoBehaviour
         Process p = Process.Start(psInfo);
         //p.WaitForExit();
     }
-
-    void Update()
-    {
-        exProcess.CloseMainWindow();
-        exProcess.Dispose();
-    }
 }
