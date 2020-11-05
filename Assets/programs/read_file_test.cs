@@ -26,7 +26,10 @@ public class read_file_test : MonoBehaviour
     void flag_change(int d, int num, bool t_f = true){
         if(d == int.Parse(deta)){
                 Debug.Log("Successfully read" + num);
-                Bv.push_flag[num] = t_f;
+                for(int i=0;i<5;i++){
+                    Bv.push_flag[i] = false;
+                }
+                 Bv.push_flag[num] = t_f;
         }
     }
 
@@ -50,11 +53,6 @@ public class read_file_test : MonoBehaviour
                 flag_change(3, box3);
                 flag_change(4, box4);
                 flag_change(5, box5);
-                flag_change(6, box1, false);
-                flag_change(6, box2, false);
-                flag_change(6, box3, false);
-                flag_change(6, box4, false);
-                flag_change(6, box5, false);
                 //ここまでフラグ管理
                 before_deta = deta;
             }
