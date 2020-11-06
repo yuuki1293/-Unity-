@@ -7,21 +7,25 @@
 ; modified    : 
 ;=================================================== 
 ;; COMポート／ボー・レート設定 
-COM_PORT = '8'
-BAUDRATE = '9600' 
+COM_PORT = '4'
+BAUDRATE = '9600'
 ;=================================================== 
 ;; ①コマンド組立て 
-COMMAND = '/C=' 
-strconcat COMMAND COM_PORT
+=======
+COMMAND = '/I /C=' 
+strconcat COMMAND COM_PORT 
 strconcat COMMAND ' /BAUD='
 strconcat COMMAND BAUDRATE
  
 ;; ②接続 
 connect COMMAND
+fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
+filewriteln FH "0"
+fileclose FH
 
 do
     ;4523??が来るまで待つ
-    waitrecv "10" 4 1
+    waitregex "[123456]"
     ;500秒待つ
     mpause 500
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
@@ -31,10 +35,3 @@ do
     filewriteln FH inputstr
     fileclose FH
 loop
-
-; do
-; fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
-; filewriteln FH '03'
-; fileclose FH
-; mpause 500
-; loop
