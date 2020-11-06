@@ -70,7 +70,7 @@ namespace Bluetooth_value
     public class Bv
     {
         //フラグ数
-        public static int flag_num = 5;
+        public static int flag_num { get; } = 5;
         public static bool[] push_flag = new bool[flag_num];
 
     }
