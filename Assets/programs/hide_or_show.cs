@@ -15,9 +15,10 @@ public class hide_or_show : MonoBehaviour
     void Update()
     {
         dt += nega * Time.deltaTime;
-        if (dt > gt || dt < 0.05) nega *= -1;
+        if (dt > gt) nega = -1;
+        if (dt < 0.05f) nega = 1;
         mr = GetComponent<SpriteRenderer>();
-        Debug.Log(dt);
+        Debug.Log(dt * 255);
         if (Bv.push_flag[num]) mr.material.color = new Color32(0, 255, 10, (byte)(dt * 255));
         else mr.material.color = new Color32(255, 100, 100, 0);
     }
