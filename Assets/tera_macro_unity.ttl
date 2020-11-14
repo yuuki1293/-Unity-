@@ -23,8 +23,7 @@ filewriteln FH "0"
 fileclose FH
 
 do
-    ;4523??が来るまで待つ
-    waitregex "[123456]"
+    waitregex "[0-9]"
     ;500秒待つ
     mpause 500
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く

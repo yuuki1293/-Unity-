@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.IO;
 using Bluetooth_value;
+using UnityEngine.SceneManagement;
 
 public class read_file_test : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class read_file_test : MonoBehaviour
     float dt = 0;
     float gt = 0.5f;
     string before_deta;
-    public bool[] local_flag = new bool[Bv.flag_num];
+    public bool[] local_flag = new bool[Bv.box_flag_num];
     string deta = "";
+    public string next_scene;
 
     //フラグの名前を書く場所
     //-------------------------------------------------------
@@ -26,7 +28,7 @@ public class read_file_test : MonoBehaviour
         if (d == int.Parse(deta))
         {
             Debug.Log("Successfully read" + num);
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < Bv.box_flag_num; i++)
             {
                 Bv.push_flag[i] = false;
             }
@@ -38,16 +40,13 @@ public class read_file_test : MonoBehaviour
     void Update()
     {
         dt += Time.deltaTime;
-        for (int i = 0; i < Bv.flag_num; i++)
+        for (int i = 0; i < Bv.box_flag_num; i++)
         {
             local_flag[i] = Bv.push_flag[i];
         }
         if (dt > gt)
         {
             deta = File.ReadAllText(path);
-            // Debug.Log("////"+deta);
-            // string buf = "1001";
-            //Debug.Log("Data is " + deta);
             if (before_deta != deta)
             {
                 Debug.Log(deta);
@@ -57,6 +56,8 @@ public class read_file_test : MonoBehaviour
                 flag_change(3, box3);
                 flag_change(4, box4);
                 flag_change(5, box5);
+                if (7 == int.Parse(deta)) Bv.動画だけ = true;
+                if (8 == int.Parse(deta)) Bv.動画だけ = false;
                 //ここまでフラグ管理
                 before_deta = deta;
             }
@@ -70,8 +71,9 @@ namespace Bluetooth_value
     public class Bv
     {
         //フラグ数
-        public static int flag_num { get; } = 5;
-        public static bool[] push_flag = new bool[flag_num];
+        public static int box_flag_num { get; } = 5;
+        public static bool[] push_flag = new bool[box_flag_num];
+        public static bool 動画だけ = false;
 
     }
 }
