@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class read_file_test : MonoBehaviour
 {
-    string path = "C:\\Users\\yuuki\\動画再生\\Assets\\bluetooth_unity.pfu";
+    string path = Directory.GetCurrentDirectory() + "\\Assets\\bluetooth_unity.pfu";
     float dt = 0;
     float gt = 0.5f;
     string before_deta;
@@ -22,20 +22,22 @@ public class read_file_test : MonoBehaviour
     const int box5 = 4;
     //-------------------------------------------------------
 
-    //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
-    void flag_change(string d, int num, bool t_f = true)
+
+    void flag_change(string このデータが来たとき, int 置き換える配列の番号, bool trueにするかfalseにするか = true)
     {
-        if (d == deta)
+        if (このデータが来たとき == deta)
         {
-            Debug.Log("Successfully read" + num);
+            Debug.Log("Successfully read" + 置き換える配列の番号);
             Bv.ルーレットが回せる = true;
             for (int i = 0; i < 5; i++)
             {
                 Bv.push_flag[i] = false;
             }
-            Bv.push_flag[num] = t_f;
+            Bv.push_flag[置き換える配列の番号] = trueにするかfalseにするか;
         }
     }
+
+
 
     // Update is called once per frame
     void Update()
