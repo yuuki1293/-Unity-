@@ -23,12 +23,13 @@ public class read_file_test : MonoBehaviour
     //-------------------------------------------------------
 
     //flag_change(このデータが来たとき, 書き換える配列の番号（デフォルトで受信した文字列の後ろ二桁）,trueにするかfalseにするか（デフォルトでtrue）);
-    void flag_change(int d, int num, bool t_f = true)
+    void flag_change(string d, int num, bool t_f = true)
     {
-        if (d == int.Parse(deta))
+        if (d == deta)
         {
             Debug.Log("Successfully read" + num);
-            for (int i = 0; i < Bv.box_flag_num; i++)
+            Bv.ルーレットが回せる = true;
+            for (int i = 0; i < 5; i++)
             {
                 Bv.push_flag[i] = false;
             }
@@ -47,17 +48,22 @@ public class read_file_test : MonoBehaviour
         if (dt > gt)
         {
             deta = File.ReadAllText(path);
+            deta = deta.Replace("\n", "");
             if (before_deta != deta)
             {
                 Debug.Log(deta);
                 //ここからフラグ管理
-                flag_change(1, box1);
-                flag_change(2, box2);
-                flag_change(3, box3);
-                flag_change(4, box4);
-                flag_change(5, box5);
-                if (7 == int.Parse(deta)) Bv.動画だけ = true;
-                if (8 == int.Parse(deta)) Bv.動画だけ = false;
+                flag_change("01", box1);
+                flag_change("02", box2);
+                flag_change("03", box3);
+                flag_change("04", box4);
+                flag_change("05", box5);
+                if ("06" == deta) Bv.動画だけ = true;
+                if ("07" == deta) Bv.動画だけ = false;
+                if ("08" == deta) Bv.動画切り替え = 0;
+                if ("09" == deta) Bv.動画切り替え = 1;
+                if ("10" == deta) Bv.動画切り替え = 2;
+
                 //ここまでフラグ管理
                 before_deta = deta;
             }
@@ -72,8 +78,9 @@ namespace Bluetooth_value
     {
         //フラグ数
         public static int box_flag_num { get; } = 5;
-        public static bool[] push_flag = new bool[box_flag_num];
-        public static bool 動画だけ = false;
-        public static bool ルーレットが回せる = false;
+        public static bool[] push_flag { get; set; } = new bool[box_flag_num];
+        public static bool 動画だけ { get; set; } = false;
+        public static bool ルーレットが回せる { get; set; } = false;
+        public static byte 動画切り替え { get; set; } = 0;
     }
 }
