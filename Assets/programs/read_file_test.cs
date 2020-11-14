@@ -74,6 +74,6 @@ namespace Bluetooth_value
         public static int box_flag_num { get; } = 5;
         public static bool[] push_flag = new bool[box_flag_num];
         public static bool 動画だけ = false;
-
+        public static bool ルーレットが回せる = false;
     }
 }
