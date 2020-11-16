@@ -9,17 +9,27 @@ public class roulette_pare : MonoBehaviour
     const int 一の位 = 0;
     const int 十の位 = 1;
     const int 百の位 = 2;
+    float dt = 0;
+    float dtr = 0;
     void Update()
     {
-        if (Bv.ルーレットが回せる)
+        if (dt > 0.1f)
         {
-            value.位[一の位] = Random.Range(0, 10).ToString();
-            value.位[十の位] = Random.Range(0, 10).ToString();
-            value.位[百の位] = Random.Range(0, 10).ToString();
-            Debug.Log(value.位);
-            Bv.ルーレットが回せる = false;
+            if (Bv.ルーレットが回せる)
+            {
+                dtr += 100;
+                if (dtr < 500) value.位[一の位] = Random.Range(0, 10).ToString();
+                if (dtr < 1000) value.位[十の位] = Random.Range(0, 10).ToString();
+                if (dtr < 1500) value.位[百の位] = Random.Range(0, 10).ToString();
+                else
+                {
+                    Bv.ルーレットが回せる = false;
+                    dtr = 0;
+                }
+            }
+            dt = 0;
         }
-
+        dt += Time.deltaTime;
     }
 }
 

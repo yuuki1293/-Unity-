@@ -11,7 +11,6 @@ public class roulette_child : MonoBehaviour
     public int num;
     public Text te;
 
-    // Update is called once per frame
     void Update()
     {
         if (Bv.動画だけ) te.color = new Color(0, 0, 0, 0);
