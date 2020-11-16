@@ -407,7 +407,7 @@ RectTransform:
   m_GameObject: {fileID: 322778889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1306415684}
   - {fileID: 1800870284}
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377514978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a570e181fca1b4ca59bef5d12f4930, type: 3}
+  m_Script: {fileID: 11500000, guid: b5011fd22c1ed004c86b5a81cf8deeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1377514980
@@ -2021,11 +2021,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377514978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac2bca2f40fe60418d284ce25ac589e, type: 3}
+  m_Script: {fileID: 11500000, guid: f78d24ca6bf38754ba62a770ea2b82f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   local_flag: 0000000000
-  next_scene: MovieScene
+  next_scene: 
 --- !u!4 &1377514981
 Transform:
   m_ObjectHideFlags: 0

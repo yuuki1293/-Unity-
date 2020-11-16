@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using roulette;
+using Bluetooth_value;
 
 public class roulette_child : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class roulette_child : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Bv.動画だけ) te.color = new Color(0, 0, 0, 0);
+        else te.color = new Color(0, 0, 0, 1);
         te.text = value.位[num];
     }
 }

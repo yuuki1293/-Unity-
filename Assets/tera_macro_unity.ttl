@@ -18,18 +18,18 @@ strconcat COMMAND BAUDRATE
  
 ;; ②接続 
 connect COMMAND
-fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
+fileopen FH 'C:\Users\i2011430\動画再生\Assets\bluetooth_unity.pfu' 0
 filewriteln FH "0"
 fileclose FH
 
 do
-    waitregex "[0-9][0-9]"
+    waitregex "\d{2}"
     ;500秒待つ
     mpause 500
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
     ;filewriteln ファイルハンドル　文字列：ファイルに書き込む
     ;fileclose フィアルハンドル：ファイルを閉じる
-    fileopen FH 'C:\Users\yuuki\動画再生\Assets\bluetooth_unity.pfu' 0
+    fileopen FH 'C:\Users\i2011430\動画再生\Assets\bluetooth_unity.pfu' 0
     filewriteln FH inputstr
     fileclose FH
 loop

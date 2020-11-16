@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.IO;
 using Bluetooth_value;
-using UnityEngine.SceneManagement;
 
 public class read_file_test : MonoBehaviour
 {
-    string path = Directory.GetCurrentDirectory() + "\\Assets\\bluetooth_unity.pfu";
+    string bluetooth_unity = Directory.GetCurrentDirectory() + "\\Assets\\bluetooth_unity.pfu";
     float dt = 0;
     float gt = 0.5f;
     string before_deta;
@@ -25,7 +24,7 @@ public class read_file_test : MonoBehaviour
 
     void flag_change(string このデータが来たとき, int 置き換える配列の番号, bool trueにするかfalseにするか = true)
     {
-        if (このデータが来たとき == deta)
+        if (int.Parse(このデータが来たとき) == int.Parse(deta))
         {
             Debug.Log("Successfully read" + 置き換える配列の番号);
             Bv.ルーレットが回せる = true;
@@ -49,7 +48,7 @@ public class read_file_test : MonoBehaviour
         }
         if (dt > gt)
         {
-            deta = File.ReadAllText(path);
+            deta = File.ReadAllText(bluetooth_unity);
             deta = deta.Replace("\n", "");
             if (before_deta != deta)
             {
@@ -60,11 +59,11 @@ public class read_file_test : MonoBehaviour
                 flag_change("03", box3);
                 flag_change("04", box4);
                 flag_change("05", box5);
-                if ("06" == deta) Bv.動画だけ = true;
-                if ("07" == deta) Bv.動画だけ = false;
-                if ("08" == deta) Bv.動画切り替え = 0;
-                if ("09" == deta) Bv.動画切り替え = 1;
-                if ("10" == deta) Bv.動画切り替え = 2;
+                if (int.Parse("06") == int.Parse(deta)) Bv.動画だけ = true;
+                if (int.Parse("07") == int.Parse(deta)) Bv.動画だけ = false;
+                if (int.Parse("08") == int.Parse(deta)) Bv.動画切り替え = 0;
+                if (int.Parse("09") == int.Parse(deta)) Bv.動画切り替え = 1;
+                if (int.Parse("10") == int.Parse(deta)) Bv.動画切り替え = 2;
 
                 //ここまでフラグ管理
                 before_deta = deta;
