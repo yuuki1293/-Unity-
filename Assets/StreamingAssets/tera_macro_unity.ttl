@@ -11,14 +11,20 @@ COM_PORT = '4'
 BAUDRATE = '9600'
 ;=================================================== 
 ;; ①コマンド組立て 
+
+pause 10
+
+getdir mypath
 COMMAND = '/I /C=' 
 strconcat COMMAND COM_PORT 
 strconcat COMMAND ' /BAUD='
 strconcat COMMAND BAUDRATE
+strconcat mypath '/bluetooth_unity.pfu'
+
  
 ;; ②接続 
 connect COMMAND
-fileopen FH 'C:\Users\i2011430\動画再生\Assets\bluetooth_unity.pfu' 0
+fileopen FH mypath 0
 filewriteln FH "0"
 fileclose FH
 
@@ -29,7 +35,7 @@ do
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
     ;filewriteln ファイルハンドル　文字列：ファイルに書き込む
     ;fileclose フィアルハンドル：ファイルを閉じる
-    fileopen FH 'C:\Users\i2011430\動画再生\Assets\bluetooth_unity.pfu' 0
+    fileopen FH mypath 0
     filewriteln FH inputstr
     fileclose FH
 loop

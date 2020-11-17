@@ -4,7 +4,7 @@ using Bluetooth_value;
 
 public class read_file_test : MonoBehaviour
 {
-    string bluetooth_unity = Directory.GetCurrentDirectory() + "\\Assets\\bluetooth_unity.pfu";
+    string bluetooth_unity = Application.streamingAssetsPath + "\\bluetooth_unity.pfu";
     float dt = 0;
     float gt = 0.5f;
     string before_deta;

@@ -15,7 +15,7 @@ public class roulette_child : MonoBehaviour
 
     void Update()
     {
-        if (Bv.動画だけ) te.color = new Color(0, 0, 0, 0);
+        if (Bv.動画だけ || Bv.動画切り替え != 2) te.color = new Color(0, 0, 0, 0);
         else te.color = new Color(0, 0, 0, 1);
         te.text = value.位[num];
     }

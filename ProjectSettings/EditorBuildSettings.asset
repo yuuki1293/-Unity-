@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/video/Scenes/JihankiScene.unity
     guid: f09c5e92107f14d4a8606b4946d18fc7
-  - enabled: 1
-    path: Assets/Scenes/MovieScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
