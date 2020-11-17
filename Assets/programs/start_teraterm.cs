@@ -14,7 +14,6 @@ public class start_teraterm : MonoBehaviour
             UseShellExecute = false,  // シェル機能を使用しない
         };
         Process p = Process.Start(psInfo);
-        //p.WaitForExit();
     }
 
     void Update()

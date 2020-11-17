@@ -12,7 +12,7 @@ BAUDRATE = '9600'
 ;=================================================== 
 ;; ①コマンド組立て 
 
-pause 10
+
 
 getdir mypath
 COMMAND = '/I /C=' 
@@ -21,7 +21,6 @@ strconcat COMMAND ' /BAUD='
 strconcat COMMAND BAUDRATE
 strconcat mypath '/bluetooth_unity.pfu'
 
- 
 ;; ②接続 
 connect COMMAND
 fileopen FH mypath 0
