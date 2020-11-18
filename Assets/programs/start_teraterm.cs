@@ -4,33 +4,45 @@ using Bluetooth_value;
 
 public class start_teraterm : MonoBehaviour
 {
-    Process exProcess;
     bool 起動 = false;
-    void Start()
-    {
-
-    }
-
+    Process exProcess;
     void Update()
     {
-        if (!起動)
+        if (起動 == false)
         {
-            ProcessStartInfo psInfo = new ProcessStartInfo()
+            if (exProcess == null)
             {
-                FileName = "C:\\Program Files (x86)\\teraterm\\ttpmacro.exe",    // 実行するファイル 
-                Arguments = Application.streamingAssetsPath + "\\tera_macro_unity.ttl",    // コマンドパラメータ（引数）
-                CreateNoWindow = true,    // コンソール・ウィンドウを開かない
-                UseShellExecute = false,  // シェル機能を使用しない
-            };
-            Process p = Process.Start(psInfo);
+                string path
+                    = Application.dataPath + "/test.wmv";
+
+                exProcess = new Process();
+
+                exProcess.StartInfo.FileName = "C:\\Program Files\\Windows Media Player\\wmplayer.exe";
+                exProcess.StartInfo.Arguments = path;
+
+                //外部プロセスの終了を検知してイベントを発生させます.
+                exProcess.EnableRaisingEvents = true;
+                exProcess.Exited += exProcess_Exited;
+
+                //外部のプロセスを実行する
+                exProcess.Start();
+            }
             起動 = true;
         }
         if (Bv.プログラム終了 == 1)
         {
-            exProcess.CloseMainWindow();
-            exProcess.Dispose();
-            exProcess = null;
-            Bv.プログラム終了 = 2;
+            if (exProcess.HasExited == false)
+            {
+                exProcess.CloseMainWindow();
+                exProcess.Dispose();
+                exProcess = null;
+            }
         }
+    }
+    void exProcess_Exited(object sender, System.EventArgs e)
+    {
+        UnityEngine.Debug.Log("Event!");
+        exProcess.Dispose();
+        exProcess = null;
     }
 }
