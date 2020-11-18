@@ -10,7 +10,6 @@ public class read_file_test : MonoBehaviour
     string before_deta;
     public bool[] local_flag = new bool[Bv.box_flag_num];
     string deta = "";
-    public string next_scene;
 
     //フラグの名前を書く場所
     //-------------------------------------------------------

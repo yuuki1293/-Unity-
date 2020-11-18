@@ -10,39 +10,26 @@ public class start_teraterm : MonoBehaviour
     {
         if (起動 == false)
         {
-            if (exProcess == null)
-            {
-                string path
-                    = Application.dataPath + "/test.wmv";
+            exProcess = new Process();
 
-                exProcess = new Process();
+            exProcess.StartInfo.FileName = "C:\\Program Files (x86)\\teraterm\\ttpmacro.exe";
+            exProcess.StartInfo.Arguments = Application.streamingAssetsPath + "\\tera_macro_unity.ttl";
+            exProcess.StartInfo.CreateNoWindow = true;
+            exProcess.StartInfo.UseShellExecute = false;
 
-                exProcess.StartInfo.FileName = "C:\\Program Files\\Windows Media Player\\wmplayer.exe";
-                exProcess.StartInfo.Arguments = path;
+            //外部のプロセスを実行する
+            exProcess.Start();
 
-                //外部プロセスの終了を検知してイベントを発生させます.
-                exProcess.EnableRaisingEvents = true;
-                exProcess.Exited += exProcess_Exited;
-
-                //外部のプロセスを実行する
-                exProcess.Start();
-            }
             起動 = true;
         }
         if (Bv.プログラム終了 == 1)
         {
-            if (exProcess.HasExited == false)
-            {
-                exProcess.CloseMainWindow();
-                exProcess.Dispose();
-                exProcess = null;
-            }
+
+            exProcess.Kill();
+            exProcess.Close();
+            exProcess.Dispose();
+            exProcess = null;
+
         }
-    }
-    void exProcess_Exited(object sender, System.EventArgs e)
-    {
-        UnityEngine.Debug.Log("Event!");
-        exProcess.Dispose();
-        exProcess = null;
     }
 }
