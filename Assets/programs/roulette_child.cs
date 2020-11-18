@@ -11,12 +11,13 @@ public class roulette_child : MonoBehaviour
     百の位 = 2;
     */
     public int num;
-    public Text te;
+    public Sprite[] スプライト = new Sprite[10];
+    public SpriteRenderer changesprite;
 
     void Update()
     {
-        if (Bv.動画だけ || Bv.動画切り替え != 2) te.color = new Color(0, 0, 0, 0);
-        else te.color = new Color(0, 0, 0, 1);
-        te.text = value.位[num];
+        if (Bv.動画だけ || Bv.動画切り替え != 2) changesprite.color = new Color(0, 0, 0, 0);
+        else changesprite.color = new Color(0, 0, 0, 1);
+        changesprite.sprite = スプライト[int.Parse(value.位[num])];
     }
 }
