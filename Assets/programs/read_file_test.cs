@@ -36,7 +36,18 @@ public class read_file_test : MonoBehaviour
         }
     }
 
+    void program_finish()
+    {
+        File.WriteAllText(bluetooth_unity, "");
+        Bv.プログラム終了 = 1;
+        Application.Quit();
+    }
 
+    void Start()
+    {
+        while (dt < 3)
+            dt += Time.deltaTime;
+    }
 
     // Update is called once per frame
     void Update()
@@ -64,6 +75,7 @@ public class read_file_test : MonoBehaviour
                 if (int.Parse("08") == int.Parse(deta)) Bv.動画切り替え = 0;
                 if (int.Parse("09") == int.Parse(deta)) Bv.動画切り替え = 1;
                 if (int.Parse("10") == int.Parse(deta)) Bv.動画切り替え = 2;
+                if (int.Parse("11") == int.Parse(deta)) program_finish();
 
                 //ここまでフラグ管理
                 before_deta = deta;
@@ -83,5 +95,6 @@ namespace Bluetooth_value
         public static bool 動画だけ { get; set; } = false;
         public static bool ルーレットが回せる { get; set; } = false;
         public static byte 動画切り替え { get; set; } = 0;
+        public static int プログラム終了 { get; set; } = 0;
     }
 }
