@@ -50,7 +50,7 @@ public class read_file_test : MonoBehaviour
         {
             deta = File.ReadAllText(bluetooth_unity);
             deta = deta.Replace("\n", "");
-            if (before_deta != deta)
+            if (before_deta != deta && int.TryParse(deta, out int a))
             {
                 Debug.Log(deta);
                 //ここからフラグ管理
