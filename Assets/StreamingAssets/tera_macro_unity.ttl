@@ -23,9 +23,6 @@ strconcat mypath '/bluetooth_unity.pfu'
 
 ;; ②接続 
 connect COMMAND
-fileopen FH mypath 0
-filewriteln FH "0"
-fileclose FH
 
 do
     waitregex "\d{2}"

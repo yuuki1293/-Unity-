@@ -22,14 +22,5 @@ public class start_teraterm : MonoBehaviour
 
             起動 = true;
         }
-        if (Bv.プログラム終了 == 1)
-        {
-
-            exProcess.Kill();
-            exProcess.Close();
-            exProcess.Dispose();
-            exProcess = null;
-
-        }
     }
 }

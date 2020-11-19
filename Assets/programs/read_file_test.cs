@@ -38,7 +38,6 @@ public class read_file_test : MonoBehaviour
     void program_finish()
     {
         File.WriteAllText(bluetooth_unity, "");
-        Bv.プログラム終了 = 1;
         Application.Quit();
     }
 
