@@ -1,15 +1,6 @@
-;セミコロンの後はコメント
-;=================================================== 
-; Filename    : tera_macro_unity.ttl
-; Description : COM Port Auto login
-; Author      : yuuki1293
-; Created     : 2020/10/28
-; modified    : 
-;=================================================== 
 ;; COMポート／ボー・レート設定 
-COM_PORT = '4'
-BAUDRATE = '9600'
-;=================================================== 
+COM_PORT = '7'
+BAUDRATE = '115200'
 ;; ①コマンド組立て 
 
 
@@ -23,6 +14,9 @@ strconcat mypath '/bluetooth_unity.pfu'
 
 ;; ②接続 
 connect COMMAND
+fileopen FH mypath 0
+filewriteln FH "0"
+fileclose FH
 
 do
     waitregex "\d{2}"

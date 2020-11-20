@@ -15,14 +15,31 @@ public class roulette_pare : MonoBehaviour
         {
             if (Bv.ルーレットが回せる)
             {
-                dtr += 100;
-                if (dtr < 500) value.位[一の位] = Random.Range(0, 10).ToString();
-                if (dtr < 1000) value.位[十の位] = Random.Range(0, 10).ToString();
-                if (dtr < 1500) value.位[百の位] = Random.Range(0, 10).ToString();
+                if (Bv.確定演出)
+                {
+                    dtr += 100;
+                    if (dtr < 500) { value.位[一の位] = Random.Range(0, 10).ToString(); } else { value.位[一の位] = "7"; }
+                    if (dtr < 1000) { value.位[十の位] = Random.Range(0, 10).ToString(); } else { value.位[十の位] = "7"; }
+                    if (dtr < 1500) value.位[百の位] = Random.Range(0, 10).ToString();
+                    else
+                    {
+                        value.位[百の位] = "7";
+                        Bv.ルーレットが回せる = false;
+                        dtr = 0;
+                        Bv.確定演出 = false;
+                    }
+                }
                 else
                 {
-                    Bv.ルーレットが回せる = false;
-                    dtr = 0;
+                    dtr += 100;
+                    if (dtr < 500) value.位[一の位] = Random.Range(0, 10).ToString();
+                    if (dtr < 1000) value.位[十の位] = Random.Range(0, 10).ToString();
+                    if (dtr < 1500) value.位[百の位] = Random.Range(0, 10).ToString();
+                    else
+                    {
+                        Bv.ルーレットが回せる = false;
+                        dtr = 0;
+                    }
                 }
             }
             dt = 0;
