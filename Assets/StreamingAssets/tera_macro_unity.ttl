@@ -1,5 +1,5 @@
 ;; COMポート／ボー・レート設定 
-COM_PORT = '7'
+COM_PORT = '5'
 BAUDRATE = '115200'
 ;; ①コマンド組立て 
 
@@ -14,18 +14,22 @@ strconcat mypath '/bluetooth_unity.pfu'
 
 ;; ②接続 
 connect COMMAND
-fileopen FH mypath 0
-filewriteln FH "0"
-fileclose FH
 
 do
     waitregex "\d{2}"
     ;500秒待つ
-    mpause 500
+    mpause 400
     ;fileopen ファイルハンドル　ファイル名　読み出す位置：ファイルを開く
     ;filewriteln ファイルハンドル　文字列：ファイルに書き込む
     ;fileclose フィアルハンドル：ファイルを閉じる
+    str2int X inputstr
+    int2str Y X
     fileopen FH mypath 0
-    filewriteln FH inputstr
+    filewriteln FH Y
     fileclose FH
+    mpause 100
+    if X = 11 then
+        closett
+        exit
+    endif
 loop

@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewClip:
-  - {fileID: 32900000, guid: b05adfa1fdcdaaf458912384c4ebf1b4, type: 3}
+  - {fileID: 32900000, guid: c9f07b63c944c174aba89926e901a911, type: 3}
   - {fileID: 32900000, guid: 96619c0f48d99e04f9e938e19d2b84f2, type: 3}
   - {fileID: 32900000, guid: 61357bd618ed8264786ee5d1b894c696, type: 3}
   VideoPlayerComponent: {fileID: 1090350207}
