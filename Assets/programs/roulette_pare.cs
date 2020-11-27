@@ -22,13 +22,13 @@ public class roulette_pare : MonoBehaviour
                     if (dtr < 1000) { value.位[一の位] = Random.Range(0, 10).ToString(); } else { value.位[一の位] = "7"; }
                     if (dtr < 1500) { value.位[十の位] = Random.Range(0, 10).ToString(); } else { value.位[十の位] = "7"; }
                     if (dtr < 2500) value.位[百の位] = Random.Range(0, 10).ToString();
-                    else
+                    else value.位[百の位] = "7";
+                    if (dtr > 3000)
                     {
-                        value.位[百の位] = "7";
                         Bv.ルーレットが回せる = false;
                         dtr = 0;
                         Bv.確定演出 = false;
-                        Bv.動画切り替え = 3;
+                        Bv.daisuke = true;
                     }
                 }
                 else
@@ -37,7 +37,7 @@ public class roulette_pare : MonoBehaviour
                     if (dtr < 1000) value.位[一の位] = Random.Range(0, 10).ToString();
                     if (dtr < 1500) value.位[十の位] = Random.Range(0, 10).ToString();
                     if (dtr < 2500) value.位[百の位] = Random.Range(0, 10).ToString();
-                    else
+                    else if (dtr > 3000)
                     {
                         Bv.ルーレットが回せる = false;
                         dtr = 0;
@@ -45,7 +45,7 @@ public class roulette_pare : MonoBehaviour
                              value.位[十の位] == value.位[百の位] &&
                              value.位[百の位] == "7")
                         {
-                            Bv.動画切り替え = 3;
+                            Bv.daisuke = true;
                         }
                     }
                 }

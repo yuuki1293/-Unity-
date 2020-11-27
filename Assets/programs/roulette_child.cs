@@ -16,7 +16,7 @@ public class roulette_child : MonoBehaviour
 
     void Update()
     {
-        if (Bv.動画だけ || Bv.動画切り替え != 2) changesprite.color = new Color(255, 255, 255, 0);
+        if (Bv.動画だけ || Bv.動画切り替え != 2 || Bv.daisuke) changesprite.color = new Color(255, 255, 255, 0);
         else changesprite.color = new Color(255, 255, 255, 1);
         changesprite.sprite = スプライト[int.Parse(value.位[num])];
     }

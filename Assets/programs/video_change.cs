@@ -12,13 +12,14 @@ public class video_change : MonoBehaviour
     {
         AudioSource audio = GetComponent<AudioSource>();
         AudioSource source = gameObject.GetComponent<AudioSource>();
-        VideoPlayerComponent.clip = NewVideoClip[Bv.動画切り替え];
-        if (Bv.動画切り替え == 3 && 再生)
+        if (Bv.daisuke) VideoPlayerComponent.clip = NewVideoClip[3];
+        else VideoPlayerComponent.clip = NewVideoClip[Bv.動画切り替え];
+        if (Bv.daisuke && 再生)
         {
             audio.PlayOneShot(NewAudioClip, 1.0f);
             再生 = false;
         }
-        else if (Bv.動画切り替え != 3)
+        else if (!Bv.daisuke)
         {
             source.Stop(); 再生 = true;
         }
