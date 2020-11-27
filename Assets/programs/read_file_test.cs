@@ -26,7 +26,7 @@ public class read_file_test : MonoBehaviour
         if (int.Parse(このデータが来たとき) == int.Parse(deta))
         {
             Debug.Log("Successfully read" + 置き換える配列の番号);
-            if(Bv.動画切り替え == 2)Bv.ルーレットが回せる = true;
+            // if(Bv.動画切り替え == 2)Bv.ルーレットが回せる = true;
             for (int i = 0; i < 5; i++)
             {
                 Bv.push_flag[i] = false;
@@ -45,7 +45,7 @@ public class read_file_test : MonoBehaviour
             }
         }
     }
-    
+
     void program_finish()
     {
         File.WriteAllText(bluetooth_unity, "");
@@ -87,6 +87,7 @@ public class read_file_test : MonoBehaviour
                 if (int.Parse("10") == int.Parse(deta)) Bv.動画切り替え = 2;
                 if (int.Parse("11") == int.Parse(deta)) program_finish();
                 if (int.Parse("12") == int.Parse(deta)) Bv.確定演出 = true;
+                if (int.Parse("13") == int.Parse(deta)) Bv.ルーレットが回せる = true;
 
                 //ここまでフラグ管理
                 before_deta = deta;
