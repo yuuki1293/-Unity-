@@ -4,10 +4,23 @@ using Bluetooth_value;
 
 public class video_change : MonoBehaviour
 {
-    public VideoClip[] NewClip = new VideoClip[3];
+    public VideoClip[] NewVideoClip = new VideoClip[4];
+    public AudioClip NewAudioClip;
     public VideoPlayer VideoPlayerComponent;
+    private bool 再生 = true;
     void Update()
     {
-        VideoPlayerComponent.clip = NewClip[Bv.動画切り替え];
+        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource source = gameObject.GetComponent<AudioSource>();
+        VideoPlayerComponent.clip = NewVideoClip[Bv.動画切り替え];
+        if (Bv.動画切り替え == 3 && 再生)
+        {
+            audio.PlayOneShot(NewAudioClip, 1.0f);
+            再生 = false;
+        }
+        else if (Bv.動画切り替え != 3)
+        {
+            source.Stop(); 再生 = true;
+        }
     }
 }
