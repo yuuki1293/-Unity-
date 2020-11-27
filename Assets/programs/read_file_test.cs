@@ -87,7 +87,7 @@ public class read_file_test : MonoBehaviour
                 if (int.Parse("10") == int.Parse(deta)) Bv.動画切り替え = 2;
                 if (int.Parse("11") == int.Parse(deta)) program_finish();
                 if (int.Parse("12") == int.Parse(deta)) Bv.確定演出 = true;
-                if (int.Parse("13") == int.Parse(deta)) Bv.ルーレットが回せる = true;
+                if (int.Parse("13") == int.Parse(deta) && Bv.動画切り替え == 2) Bv.ルーレットが回せる = true;
 
                 //ここまでフラグ管理
                 before_deta = deta;
@@ -109,5 +109,6 @@ namespace Bluetooth_value
         public static byte 動画切り替え { get; set; } = 0;
         public static int プログラム終了 { get; set; } = 0;
         public static bool 確定演出 { get; set; } = false;
+        public static bool daisuke { get; set; } = false;
     }
 }

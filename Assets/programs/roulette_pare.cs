@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Bluetooth_value;
 using roulette;
+using System.Threading;
 
 public class roulette_pare : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class roulette_pare : MonoBehaviour
                         Bv.ルーレットが回せる = false;
                         dtr = 0;
                         Bv.確定演出 = false;
+                        Bv.動画切り替え = 3;
                     }
                 }
                 else
@@ -39,6 +41,12 @@ public class roulette_pare : MonoBehaviour
                     {
                         Bv.ルーレットが回せる = false;
                         dtr = 0;
+                        if (value.位[一の位] == value.位[十の位] &&
+                             value.位[十の位] == value.位[百の位] &&
+                             value.位[百の位] == "7")
+                        {
+                            Bv.動画切り替え = 3;
+                        }
                     }
                 }
             }
