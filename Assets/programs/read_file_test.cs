@@ -35,6 +35,16 @@ public class read_file_test : MonoBehaviour
         }
     }
 
+    void reset(string このデータが来たとき)
+    {
+        if (int.Parse(このデータが来たとき) == int.Parse(deta))
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Bv.push_flag[i] = false;
+            }
+        }
+    }
     void program_finish()
     {
         File.WriteAllText(bluetooth_unity, "");
@@ -63,6 +73,7 @@ public class read_file_test : MonoBehaviour
             {
                 Debug.Log(deta);
                 //ここからフラグ管理
+                reset("00");
                 flag_change("01", box1);
                 flag_change("02", box2);
                 flag_change("03", box3);
