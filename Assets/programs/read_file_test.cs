@@ -43,6 +43,7 @@ public class read_file_test : MonoBehaviour
             {
                 Bv.push_flag[i] = false;
             }
+            Bv.daisuke=false;
         }
     }
 
