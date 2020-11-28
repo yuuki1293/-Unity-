@@ -9,15 +9,13 @@ public class video_change : MonoBehaviour
     public VideoPlayer VideoPlayerComponent;
     private bool 再生 = true;
     public float ボリューム;
-    AudioSource audio_;
-    AudioSource source;
+    public AudioSource audio_;
     void Start()
     {
-        audio_ = GetComponent<AudioSource>();
-        audio_.loop = true;
     }
     void Update()
     {
+        audio_.loop = true;
         audio_.volume = Bv.bgmを流す;
         ボリューム = Bv.bgmを流す;
         if (Bv.daisuke) VideoPlayerComponent.clip = NewVideoClip[3];
