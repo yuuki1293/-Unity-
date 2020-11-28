@@ -1,5 +1,5 @@
 ;; COMポート／ボー・レート設定 
-COM_PORT = '5'
+COM_PORT = '7'
 BAUDRATE = '115200'
 ;; ①コマンド組立て 
 

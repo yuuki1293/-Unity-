@@ -113,6 +113,6 @@ namespace Bluetooth_value
         public static int プログラム終了 { get; set; } = 0;
         public static bool 確定演出 { get; set; } = false;
         public static bool daisuke { get; set; } = false;
-        public static float bgmを流す { get; set; } = 0.0f;
+        public static float bgmを流す { get; set; } = 1.0f;
     }
 }
