@@ -89,6 +89,8 @@ public class read_file_test : MonoBehaviour
                 if (int.Parse("11") == int.Parse(deta)) program_finish();
                 if (int.Parse("12") == int.Parse(deta)) Bv.確定演出 = true;
                 if (int.Parse("13") == int.Parse(deta) && Bv.動画切り替え == 2) Bv.ルーレットが回せる = true;
+                if (int.Parse("13") == int.Parse(deta) && Bv.bgmを流す) Bv.bgmを流す = false;
+                if (int.Parse("13") == int.Parse(deta) && !Bv.bgmを流す) Bv.bgmを流す = true;
 
                 //ここまでフラグ管理
                 before_deta = deta;
