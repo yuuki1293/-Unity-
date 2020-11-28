@@ -89,8 +89,8 @@ public class read_file_test : MonoBehaviour
                 if (int.Parse("11") == int.Parse(deta)) program_finish();
                 if (int.Parse("12") == int.Parse(deta)) Bv.確定演出 = true;
                 if (int.Parse("13") == int.Parse(deta) && Bv.動画切り替え == 2) Bv.ルーレットが回せる = true;
-                if (int.Parse("13") == int.Parse(deta) && Bv.bgmを流す) Bv.bgmを流す = false;
-                if (int.Parse("13") == int.Parse(deta) && !Bv.bgmを流す) Bv.bgmを流す = true;
+                if (int.Parse("14") == int.Parse(deta) && Bv.bgmを流す == 1.0f) { Bv.bgmを流す = 0.0f; File.WriteAllText(bluetooth_unity, ""); deta = ""; }
+                else if (int.Parse("14") == int.Parse(deta) && Bv.bgmを流す == 0.0f) { Bv.bgmを流す = 1.0f; File.WriteAllText(bluetooth_unity, ""); deta = ""; }
 
                 //ここまでフラグ管理
                 before_deta = deta;
@@ -113,6 +113,6 @@ namespace Bluetooth_value
         public static int プログラム終了 { get; set; } = 0;
         public static bool 確定演出 { get; set; } = false;
         public static bool daisuke { get; set; } = false;
-        public static bool bgmを流す { get; set; } = true;
+        public static float bgmを流す { get; set; } = 1.0f;
     }
 }

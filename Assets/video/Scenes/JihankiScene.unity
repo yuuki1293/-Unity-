@@ -860,6 +860,7 @@ MonoBehaviour:
   - {fileID: 32900000, guid: a74a9e0f1fbda184cb8299ed63d7af2d, type: 3}
   NewAudioClip: {fileID: 8300000, guid: 929742dd5e486814f9d52cf5fc14fbdd, type: 3}
   VideoPlayerComponent: {fileID: 1090350207}
+  "\u30DC\u30EA\u30E5\u30FC\u30E0": 0
 --- !u!82 &1090350211
 AudioSource:
   m_ObjectHideFlags: 0
