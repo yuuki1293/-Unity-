@@ -16,12 +16,12 @@ public class video_change : MonoBehaviour
         else VideoPlayerComponent.clip = NewVideoClip[Bv.動画切り替え];
         if (Bv.daisuke && 再生)
         {
-            //audio.PlayOneShot(NewAudioClip, 1.0f);
+            if (Bv.bgmを流す) audio.PlayOneShot(NewAudioClip, 1.0f);
             再生 = false;
         }
         else if (!Bv.daisuke)
         {
-            //source.Stop(); 再生 = true;
+            if (Bv.bgmを流す) source.Stop(); 再生 = true;
         }
     }
 }

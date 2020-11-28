@@ -43,7 +43,7 @@ public class read_file_test : MonoBehaviour
             {
                 Bv.push_flag[i] = false;
             }
-            Bv.daisuke=false;
+            Bv.daisuke = false;
         }
     }
 
@@ -111,5 +111,6 @@ namespace Bluetooth_value
         public static int プログラム終了 { get; set; } = 0;
         public static bool 確定演出 { get; set; } = false;
         public static bool daisuke { get; set; } = false;
+        public static bool bgmを流す { get; set; } = true;
     }
 }
