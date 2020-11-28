@@ -854,10 +854,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewVideoClip:
-  - {fileID: 32900000, guid: f6966ff98dd29f64491c8283cd9bd489, type: 3}
-  - {fileID: 32900000, guid: 96619c0f48d99e04f9e938e19d2b84f2, type: 3}
-  - {fileID: 32900000, guid: 9bf794bc2311d4346b263ab52f7f878d, type: 3}
-  - {fileID: 32900000, guid: a74a9e0f1fbda184cb8299ed63d7af2d, type: 3}
+  - {fileID: 32900000, guid: 323f628b9db077541a394ad507b36690, type: 3}
+  - {fileID: 32900000, guid: ba043d31ab394f34385b962c10c1e499, type: 3}
+  - {fileID: 32900000, guid: 8db344fb6e27bfb47a7d8b0789116b27, type: 3}
+  - {fileID: 32900000, guid: 97fbd662fc96dc24382211b134b0ae63, type: 3}
   NewAudioClip: {fileID: 8300000, guid: 929742dd5e486814f9d52cf5fc14fbdd, type: 3}
   VideoPlayerComponent: {fileID: 1090350207}
 --- !u!82 &1090350211
