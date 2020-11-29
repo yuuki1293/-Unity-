@@ -611,10 +611,10 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 323f628b9db077541a394ad507b36690, type: 3}
   - {fileID: 32900000, guid: ba043d31ab394f34385b962c10c1e499, type: 3}
   - {fileID: 32900000, guid: 8db344fb6e27bfb47a7d8b0789116b27, type: 3}
-  - {fileID: 32900000, guid: ed99788b05d9e91498eee277805cdc9b, type: 3}
-  NewAudioClip: {fileID: 8300000, guid: bb039261eeab27e498731ca366f6a973, type: 3}
+  - {fileID: 32900000, guid: e34fbb3f918125748b879f6f1dbbec42, type: 3}
+  NewAudioClip: {fileID: 8300000, guid: d812fb26125d62b44a82cc51c50973cd, type: 3}
   VideoPlayerComponent: {fileID: 1090350207}
-  "\u30DC\u30EA\u30E5\u30FC\u30E0": 1
+  "\u30DC\u30EA\u30E5\u30FC\u30E0": 0
   audio_: {fileID: 1090350211}
 --- !u!82 &1090350211
 AudioSource:
